@@ -1,7 +1,7 @@
 import Hero from '@/components/hero'
 import Services from '@/components/services'
 import Team from '@/components/team'
-import { Baby, HandHeart, Play, Users, Globe, Earth } from 'lucide-react'
+import { Baby, HandHeart, Play, Users, Earth } from 'lucide-react'
 import React from 'react'
 
 const Page: React.FC = () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
-import { Clock, LocateIcon } from 'lucide-react';
+import {  Clock as ClockIcon, LocateIcon as LocationIcon } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import EventSkeleton from './eventSkeleton';
@@ -115,11 +115,11 @@ const Events: React.FC<IEventProps> = ({isEventPage}: IEventProps) => {
                                     <div className="p-5">
                                         <h4 className="text-lg font-semibold text-[#2cc391] mb-2">{event.name}</h4>
                                         <div className="flex items-center gap-2 text-[#777777] text-sm mb-2">
-                                            <Clock width={15} height={15} />
+                                            <ClockIcon width={15} height={15} />
                                             <p>{event.time}</p>
                                         </div>
                                         <div className="flex items-center gap-2 text-[#777777] text-sm">
-                                            <LocateIcon width={15} height={15} />
+                                            <LocationIcon width={15} height={15} />
                                             <p>{event.location}</p>
                                         </div>
                                     </div>

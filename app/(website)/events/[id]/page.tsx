@@ -3,6 +3,7 @@ import EventSkeleton from '@/components/eventSkeleton';
 import Hero from '@/components/hero'
 import { IEvents } from '@/types/types'
 import { useQuery } from '@tanstack/react-query'
+import Image from 'next/image';
 import { useParams } from 'next/navigation'
 import React from 'react'
 
@@ -63,7 +64,7 @@ const Page: React.FC = () => {
                                         <div className="flex flex-1 flex-col gap-2">
                                             {rowIndex % 2 === 0 ? (
                                                 firstImage && (
-                                                    <img
+                                                    <Image
                                                         className="object-cover h-full"
                                                         src={firstImage}
                                                         alt={`Event Image ${rowIndex * 3 + 1}`}
@@ -72,14 +73,14 @@ const Page: React.FC = () => {
                                             ) : (
                                                 <>
                                                     {firstImage && (
-                                                        <img
+                                                        <Image
                                                             className="object-cover h-full"
                                                             src={firstImage}
                                                             alt={`Event Image ${rowIndex * 3 + 1}`}
                                                         />
                                                     )}
                                                     {secondImage && (
-                                                        <img
+                                                        <Image
                                                             className="object-cover h-full"
                                                             src={secondImage}
                                                             alt={`Event Image ${rowIndex * 3 + 2}`}
@@ -94,14 +95,14 @@ const Page: React.FC = () => {
                                             {rowIndex % 2 === 0 ? (
                                                 <>
                                                     {secondImage && (
-                                                        <img
+                                                        <Image
                                                             className="object-cover h-full"
                                                             src={secondImage}
                                                             alt={`Event Image ${rowIndex * 3 + 2}`}
                                                         />
                                                     )}
                                                     {thirdImage && (
-                                                        <img
+                                                        <Image
                                                             className="object-cover h-full"
                                                             src={thirdImage}
                                                             alt={`Event Image ${rowIndex * 3 + 3}`}
@@ -110,7 +111,7 @@ const Page: React.FC = () => {
                                                 </>
                                             ) : (
                                                 thirdImage && (
-                                                    <img
+                                                    <Image
                                                         className="object-cover h-full"
                                                         src={thirdImage}
                                                         alt={`Event Image ${rowIndex * 3 + 3}`}

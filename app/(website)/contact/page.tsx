@@ -3,6 +3,7 @@ import Hero from '@/components/hero'
 import { Button } from '@/components/ui/button';
 import axios from 'axios';
 import { Mail, MailCheck, MapPin, Pen, Phone, User } from 'lucide-react'
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 const Page = () => {
@@ -57,7 +58,7 @@ const Page = () => {
     const handleSendEmail = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         try {
-            const response: any = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-email`, formData);
+            const response: { message: string } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send-email`, formData);
             if(response.message) {
                 alert(response.message);
             }
@@ -152,7 +153,7 @@ const Page = () => {
                             <div key={index} className="text-center" data-aos="flip-left">
                                 {/* Contact Image */}
                                 <div className="mb-10">
-                                    <img src={contact.image} alt={`contact-${index}`} className="mx-auto" />
+                                    <Image src={contact.image} alt={`contact-${index}`} className="mx-auto" />
                                 </div>
                                 {/* Contact Details */}
                                 <ul className="xs-unorder-list">

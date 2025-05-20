@@ -1,7 +1,5 @@
 import Events from '@/components/events'
 import Hero from '@/components/hero'
-import { Clock, LocateIcon } from 'lucide-react'
-import Image from 'next/image'
 import React from 'react'
 
 const Page:React.FC = () => {

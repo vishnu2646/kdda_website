@@ -1,4 +1,5 @@
 import Hero from '@/components/hero'
+import Image from 'next/image';
 import React from 'react'
 
 const Page: React.FC = () => {
@@ -65,7 +66,7 @@ const Page: React.FC = () => {
                                 data-aos="zoom-in"
                             >
                                 <div className="w-full h-[270px] overflow-hidden">
-                                    <img
+                                    <Image
                                         src={service.image}
                                         alt={`service-${index}`}
                                         className="w-full h-full object-cover"
