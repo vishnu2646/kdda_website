@@ -1,0 +1,99 @@
+.carousel {
+    width: 100%;
+    height: 100vh;
+}
+
+.carousel .carosel_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.carousel .carosel_wrapper .carosel_card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: 1s ease-in-out;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.534);
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay p:not(.sub-title) {
+    margin-bottom: 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 4.57143em;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay p.sub-title {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.28571em;
+    margin-top: 0;
+    display: flex;
+    align-items: flex-start;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay p.sub-title span {
+    font-size: 35px;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay p.sub-title span > span {
+    font-size: 14px;
+    background-color: #e75a5a;
+    padding: 2px;
+    border-radius: 25px;
+    position: relative;
+    right: 10px;
+    top: 8px;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay .card-footer p {
+    font-size: 12px;
+    font-weight: 300;
+}
+.carousel .carosel_wrapper .carosel_card .card_overlay .card-footer .footer.badge {
+    margin-right: 20px;
+    background-color: #e75a5a;
+    color: #fff;
+}
+.carousel .carosel_wrapper .carosel_card.carosel_card-active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: visible;
+}
+.carousel_action_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: fit-content;
+}
+.carousel_action_container .pointer {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+.carousel_action_container .pointer.active {
+    background-color: #e75a5a;
+}
