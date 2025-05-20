@@ -16,19 +16,14 @@ interface IEventProps {
 
 const Events: React.FC<IEventProps> = ({isEventPage}: IEventProps) => {
 
-    let eventsList: UseQueryResult<IEvents[], Error>
+    const queryUrl = isEventPage
+        ? `${process.env.NEXT_PUBLIC_API_URL}/events/limit`
+        : `${process.env.NEXT_PUBLIC_API_URL}/events`;
 
-    if(isEventPage) {
-        eventsList = useQuery<IEvents[]>({
+    const eventsList: UseQueryResult<IEvents[], Error> = useQuery<IEvents[]>({
             queryKey: ['events'],
-            queryFn: () => fetch('/api/events/limit').then(res => res.json()).catch(err => console.log(err))
+            queryFn: () => fetch(queryUrl).then(res => res.json()).catch(err => console.log(err))
         });
-    } else {
-        eventsList = useQuery<IEvents[]>({
-            queryKey: ['events'],
-            queryFn: () => fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`).then(res => res.json()).catch(err => console.log(err))
-        });
-    }
 
     const eventData: IEvents[] = eventsList.data ?? [];
 
@@ -83,7 +78,7 @@ const Events: React.FC<IEventProps> = ({isEventPage}: IEventProps) => {
                     const month = eventDate.toLocaleString('default', { month: 'short' });
 
                     return (
-                        <EventSkeleton isLoading={eventsList.isFetching}>
+                        <EventSkeleton isLoading={eventsList.isFetching} key={index}>
                             <Link href={`/events/${event.id}`} key={index}>
                                 <div className="shadow-lg rounded-lg overflow-hidden bg-white" data-aos="zoom-in">
                                     {/* Event Image */}

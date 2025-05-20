@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from "react";
 import { Poppins, Open_Sans } from 'next/font/google'
-import { ClerkProvider } from "@clerk/nextjs";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import RootProviders from "@/components/providers/RootProviders";
@@ -43,7 +42,6 @@ export default function RootLayout({
     }, []);
 
     return (
-        <ClerkProvider>
             <html lang="en" className="light" style={{
                 colorScheme: 'light',
             }}>
@@ -58,6 +56,5 @@ export default function RootLayout({
                     </RootProviders>
                 </body>
             </html>
-        </ClerkProvider>
     );
 }
