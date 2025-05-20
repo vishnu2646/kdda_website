@@ -42,19 +42,19 @@ export default function RootLayout({
     }, []);
 
     return (
-            <html lang="en" className="light" style={{
-                colorScheme: 'light',
-            }}>
-                <head>
-                    <title>KDDT / KDDA</title>
-                </head>
-                <body
-                    className={`${poppins.className} ${openSans.className}`}
-                >
-                    <RootProviders>
-                        {children}
-                    </RootProviders>
-                </body>
-            </html>
+        <html lang="en" className="light" style={{
+            colorScheme: 'light',
+        }}>
+            <head>
+                <title>KDDT / KDDA</title>
+            </head>
+            <body
+                className={`${poppins.className} ${openSans.className}`}
+            >
+                <RootProviders>
+                    {children}
+                </RootProviders>
+            </body>
+        </html>
     );
 }
